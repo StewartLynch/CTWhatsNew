@@ -74,7 +74,7 @@ public class CTWhatsNew {
     }
    
     
-    static public func showWhatsNew(on vC:UIViewController, whatsNew:CTWhatsNew, navBarBarTintColor:UIColor? = nil, navBarTintColor:UIColor? = nil, conditional:Bool = true) {
+    static public func showWhatsNew(on vC:UIViewController, whatsNew:CTWhatsNew, navBarBarTintColor:UIColor? = nil, navBarTintColor:UIColor? = nil, navBarTitleColor:UIColor? = nil, conditional:Bool = true) {
 
         if conditional {
             let appBuild:String = Bundle.main.infoDictionary!["CFBundleVersion"] as! String
@@ -89,6 +89,7 @@ public class CTWhatsNew {
                 presentingVc.whatsNew = whatsNew
                 presentingVc.navBarBarTintColor = navBarBarTintColor
                 presentingVc.navBarTintColor = navBarTintColor
+                presentingVc.navBarTitleColor = navBarTitleColor
                 presentingVc.providesPresentationContextTransitionStyle = true
                 presentingVc.definesPresentationContext = true
                 presentingVc.modalPresentationStyle = UIModalPresentationStyle.overFullScreen
@@ -101,6 +102,7 @@ public class CTWhatsNew {
                    presentingVc.whatsNew = whatsNew
                    presentingVc.navBarBarTintColor = navBarBarTintColor
                    presentingVc.navBarTintColor = navBarTintColor
+                   presentingVc.navBarTitleColor = navBarTitleColor
                    presentingVc.providesPresentationContextTransitionStyle = true
                    presentingVc.definesPresentationContext = true
                    presentingVc.modalPresentationStyle = UIModalPresentationStyle.overFullScreen

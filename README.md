@@ -12,7 +12,7 @@ The What's New screen will be displayed over the entire context of your applicat
 - Swift 5.0+
 ### YouTube Video
 
-Watch this video to see installation and use as described below.
+TODO: Create YouTube Video.
 
 ### Installation
 
@@ -25,11 +25,11 @@ You now have the dependency installed and are ready to import CTWhatsNew
 
 ### Set up
 
-Setting up to use this solution on one or more of your UITextFields is straight forward.
+Setting up to present CTWhatsNew.
 
-##### Step 1 - Import CTPicker
+##### Step 1 - Import CTWhatsNew
 
-In the ViewController where you are going to implement `CTPicker`.
+In the ViewController where you are going to implement `CTWhatsNew`.
 
 ```swift
 import CTWhatsNew
@@ -41,7 +41,7 @@ If you are going to present the **CTWhatsNew** screen only when your app's versi
 To create the instance, you must also pass the title and intro text.  This will be used at the top of the display to introduce the changes in general.
 
 ```swift
-let whatsNew = CTWhatsNew(title: "What's New and Different", intro: "Changes to 'My Wine Cellar'")
+let whatsNew = CTWhatsNew(title: "What's New and Different", intro: "Changes to this application over time.")
 ```
 
 ##### Step 3 - Create CTWhatsNewItems
@@ -79,25 +79,27 @@ CTWhatsNew.showWhatsNew(on: self, whatsNew: whatsNew, conditional: false)
 ```
 ### Optional Parameters
 
-As are additional optional parameters that you can pass to the `CTWhatsNew.showWhatsNew function that will change the color of the `CTWhatsNew` navigation bar and the colors of the Done button and the navigation bar title.  
+As are three additional optional parameters that you can pass to the `CTWhatsNew.showWhatsNew function that will change the color of the `CTWhatsNew` navigation bar and the colors of the Done button and the navigation bar title.  
 
 **Note:** The default colors support **dark mode** if you are using CTWhatsNew on a device running iOS 13 or later.  If you are going to customize the colors, ensure that you include dark mode supported color sets.
 
 These three colors are:
 
 - **navBarBarTintColor** - the background color of the navigation bar
-- **navBarTintColor** - the navigation bar button colors and color of title
+- **navBarTintColor** - the navigation bar done button color
+- **navBarTitleColor** - the color for the title
 
-To pass these on to the function, you can add these as the 2nd and 3rd parameters.  Each one is optional so you may choose to leave one or more out.
+To pass these on to the function, you can add these as the 3rd and 4th and 5th parameters.  Each one is optional so you may choose to leave one or more out.
 
 Here is an example of a `CTWhatsNew.showWhatsNew` call using all options.
 
 ```swift
 CTWhatsNew.showWhatsNew(on: self,
-                                whatsNew: whatsNew,
-                                navBarBarTintColor: .red,
-                                navBarTintColor: .white,
-                                conditional: false)
+                        whatsNew: whatsNew,
+                        navBarBarTintColor: .red,
+                        navBarTintColor: .white,
+                        navBarTitleColor: .yellow,
+                        conditional: false)
 ```
 
 

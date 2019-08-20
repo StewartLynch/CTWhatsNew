@@ -14,6 +14,7 @@ public class CTWhatsNewParentViewController: UIViewController {
     var whatsNew:CTWhatsNew!
     var navBarBarTintColor:UIColor?
     var navBarTintColor:UIColor?
+    var navBarTitleColor:UIColor?
     
     override public func viewDidLoad() {
         super.viewDidLoad()
@@ -33,6 +34,7 @@ public class CTWhatsNewParentViewController: UIViewController {
         childVC.delegate = self
         childVC.navBarBarTintColor = navBarBarTintColor
         childVC.navBarTintColor = navBarTintColor
+        childVC.navBarTitleColor = navBarTitleColor
         vw = navVC.view
         vw?.layer.cornerRadius = 10
         vw?.layer.borderWidth = 1

@@ -21,6 +21,7 @@ public class CTWhatsNewChildViewController: UIViewController {
     var webView: WKWebView!
     var navBarBarTintColor:UIColor?
     var navBarTintColor:UIColor?
+    var navBarTitleColor:UIColor?
     var bgColor:String = "#ffffff"
     var textColor:String = "000000"
     
@@ -40,7 +41,10 @@ public class CTWhatsNewChildViewController: UIViewController {
         }
         if let tintColor = navBarTintColor {
             navigationBarAppearance.tintColor = tintColor
-            navigationBarAppearance.titleTextAttributes = [NSAttributedString.Key.foregroundColor:tintColor]
+        }
+        if let titleColor = navBarTitleColor {
+            print("Title Color different")
+            navigationBarAppearance.titleTextAttributes = [NSAttributedString.Key.foregroundColor:titleColor]
         }
         let title = Bundle.main.infoDictionary!["CFBundleName"] as! String
         self.navigationItem.title = title
@@ -88,7 +92,16 @@ public class CTWhatsNewChildViewController: UIViewController {
         <style>
         body {
         font-family: "Helvetica Neue", sans-serif;
-        font-size: 48px;
+        """
+        
+        
+//      Make size a littler harger if iPhone
+        if UIDevice.current.userInterfaceIdiom == .phone {
+            html += """
+            font-size:36px;
+            """
+        }
+        html += """
         padding-left: 0.5em;
         padding-right: 0.5em;
         color: \(textColor);
