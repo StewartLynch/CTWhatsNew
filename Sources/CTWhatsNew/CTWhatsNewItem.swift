@@ -14,7 +14,7 @@ public struct CTWhatsNewItem {
     public let description:String
     public let version:String
     
-    init(version:String, versionTitle:String,description:String){
+    public init(version:String, versionTitle:String,description:String){
         self.version = version
         self.versionTitle = versionTitle
         self.description = description
