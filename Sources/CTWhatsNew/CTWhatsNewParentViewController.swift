@@ -32,7 +32,7 @@ public class CTWhatsNewParentViewController: UIViewController {
         navVC.didMove(toParent: self)
         childVC.delegate = self
         childVC.navBarBarTintColor = navBarBarTintColor
-        childVC.navBarBarTintColor = navBarBarTintColor
+        childVC.navBarTintColor = navBarTintColor
         vw = navVC.view
         vw?.layer.cornerRadius = 10
         vw?.layer.borderWidth = 1
