@@ -1,5 +1,5 @@
 //
-//  WhatsNew.swift
+//  CTWhatsNew.swift
 //  WhatsNewTemplate
 //
 //  Created by Stewart Lynch on 2019-05-05.
@@ -14,7 +14,7 @@ import UIKit
 /// The Objective:
 ///
 /// By default, the WhatsNew screen will only appear if you have a version number change.
-/// If you wish to have the screen appear on demand, you need to pass the conditional: false parameter
+/// If you wish to have the screen appear on demand, you need to pass the isOnDemand: true parameter
 ///
 /// Example
 ///
@@ -44,10 +44,10 @@ import UIKit
           ///  CTWhatsNew.showWhatsNew(on: self, whatsNew: whatsNew)
           ///
           ///  // displays the view on demand
-         ///  CTWhatsNew.showWhatsNew(on: self, whatsNew: whatsNew, conditional: false)
+         ///  CTWhatsNew.showWhatsNew(on: self, whatsNew: whatsNew, isOnDemand: true)
          ///
          ///  // displays on demand with optional colors
-         ///  CTWhatsNew.showWhatsNew(on: self, whatsNew: whatsNew, navBarBarTintColor: .red, navBarTintColor: .white, conditional: false
+         ///  CTWhatsNew.showWhatsNew(on: self, whatsNew: whatsNew, navBarBarTintColor: .red, navBarTintColor: .white, isOnDemand: true
   /// ```
           ///
 /// ```
@@ -74,9 +74,9 @@ public class CTWhatsNew {
     }
    
     
-    static public func showWhatsNew(on vC:UIViewController, whatsNew:CTWhatsNew, navBarBarTintColor:UIColor? = nil, navBarTintColor:UIColor? = nil, navBarTitleColor:UIColor? = nil, conditional:Bool = true) {
+    static public func showWhatsNew(on vC:UIViewController, whatsNew:CTWhatsNew, navBarBarTintColor:UIColor? = nil, navBarTintColor:UIColor? = nil, navBarTitleColor:UIColor? = nil, isOnDemand:Bool = false) {
 
-        if conditional {
+        if !isOnDemand {
             let appBuild:String = Bundle.main.infoDictionary!["CFBundleVersion"] as! String
             let appVersion:String = Bundle.main.infoDictionary!["CFBundleShortVersionString"] as! String
             let verString = "\(appVersion) Build:\(appBuild)"
