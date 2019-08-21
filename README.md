@@ -64,6 +64,8 @@ whatsNew.newItem(CTWhatsNewItem(version: "1.2",
 
 ##### Step 4 - Present the CTWhatsNew screen
 
+###### Conditional Presentation
+
 The original intent of What's new was to only present the screen once for every new build installed.  If this is how you wish to use it, simply add the following to the after creating your items
 
 ```swift
@@ -73,9 +75,11 @@ When this function is called, it checks the version and build number of your app
 
 When the screen is dismissed, the current version and build number of your app is stored and will thus prevent the display of What's new in future launches.
 
-If you wish to display whats new on demand, you can assign it to an action on a button.  If this is the case, use the following:
+###### On Demand presentation
+
+If you wish to display whats new on demand, you can assign it to an action on a button.  If this is the case, add isOnDemand:true as the final parameter.
 ```swift
-CTWhatsNew.showWhatsNew(on: self, whatsNew: whatsNew, conditional: false)
+CTWhatsNew.showWhatsNew(on: self, whatsNew: whatsNew, isOnDemand: true)
 ```
 ### Optional Parameters
 
@@ -99,7 +103,7 @@ CTWhatsNew.showWhatsNew(on: self,
                         navBarBarTintColor: .red,
                         navBarTintColor: .white,
                         navBarTitleColor: .yellow,
-                        conditional: false)
+                        isOnDemand: true)
 ```
 
 
