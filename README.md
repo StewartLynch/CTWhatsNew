@@ -12,7 +12,9 @@ The What's New screen will be displayed over the entire context of your applicat
 - Swift 5.0+
 ### YouTube Video
 
-TODO: Create YouTube Video.
+See overview along with installation and setup instructions at:
+
+https://www.youtube.com/watch?v=OuhPgUaCzX8
 
 ### Installation
 
