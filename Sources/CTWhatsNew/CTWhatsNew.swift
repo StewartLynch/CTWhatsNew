@@ -5,8 +5,8 @@
 //  Created by Stewart Lynch on 2019-05-05.
 //  Copyright © 2019 Stewart Lynch. All rights reserved.
 //
+    import UIKit
 
-import UIKit
 /// A Class for creating and presenting a view displaying what is new for this version
 /// along with a history of previous updates.
 /// - Parameter whatsNew: an item of what is new.

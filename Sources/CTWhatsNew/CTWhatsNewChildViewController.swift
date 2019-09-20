@@ -32,7 +32,7 @@ public class CTWhatsNewChildViewController: UIViewController {
         loadPage()
     }
     
-    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+    override public func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
            super.traitCollectionDidChange(previousTraitCollection)
            guard let previousTraitCollection = previousTraitCollection else {return}
                if #available(iOS 13.0, *) {
@@ -80,9 +80,7 @@ public class CTWhatsNewChildViewController: UIViewController {
         //        print("WhatsNewViewController deinitialized")
     }
     
-    public override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
-        loadPage()
-    }
+
     
     fileprivate func loadPage() {
         if #available(iOS 13, *) {
