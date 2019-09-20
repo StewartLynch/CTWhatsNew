@@ -32,6 +32,15 @@ public class CTWhatsNewChildViewController: UIViewController {
         loadPage()
     }
     
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+           super.traitCollectionDidChange(previousTraitCollection)
+           guard let previousTraitCollection = previousTraitCollection else {return}
+               if #available(iOS 13.0, *) {
+                   if previousTraitCollection.hasDifferentColorAppearance(comparedTo: traitCollection) {
+                       loadPage()
+               }
+           }
+       }
 
     fileprivate func setupNavBar() {
         let navigationBarAppearance = self.navigationController!.navigationBar
@@ -100,7 +109,16 @@ public class CTWhatsNewChildViewController: UIViewController {
             html += """
             font-size:36px;
             """
+        } else {
+            if #available(iOS 13, *) {
+                // No Change Required for < iOS13
+            } else {
+                html += """
+                font-size:36px;
+                """
+            }
         }
+        
         html += """
         padding-left: 0.5em;
         padding-right: 0.5em;
